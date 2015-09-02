@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body class='page'>
+
+<table style="width:100%">
+  <tr>
+      <td>Total number of active issues</td>
+    <td>{{tac}}</td>
+  </tr>
+  <tr>
+      <td>Total number of active issues above 7 days</td>
+    <td>{{ta7mc}}</td>
+  </tr>
+  <tr>
+      <td>Total number of active issues within 7 days after 24 hrs</td>
+    <td>{{ta247c}}</td>
+  </tr>
+  <tr>
+      <td>Total number of active issues within last 24 hrs</td>
+    <td>{{ta24c}}</td>
+  </tr>
+</table>
+
+
+</body>
+</html>
