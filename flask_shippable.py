@@ -105,7 +105,7 @@ def getUrl():
 
 			        if diff_time.days <= 0:
 				        total_active_24_count = int(total_active_24_count) + 1
-			        else:
+			        elif diff_time.days >= 1 and diff_time.days < 7:
 				        total_active_24_7_count = int(total_active_24_7_count) + 1
 
 
