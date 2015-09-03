@@ -2,7 +2,7 @@ import os
 import re
 import sys
 import datetime
-import urllib, urllib2
+import urllib, urllib2, httplib
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
@@ -45,7 +45,7 @@ def getUrl():
         except urllib2.HTTPError, e:
             message = 'HTTPError = ' + str(e.code)
             return render_template('message.html', message= message)
-        except urllib2.HTTPException, e:
+        except httplib.HTTPException, e:
             message = 'HTTPException'
             return render_template('message.html', message= message)
 
