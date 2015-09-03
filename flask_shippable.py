@@ -45,7 +45,7 @@ def getUrl():
         except urllib2.HTTPError, e:
             message = 'HTTPError = ' + str(e.code)
             return render_template('message.html', message= message)
-        except urllib2.HTTPError, e:
+        except urllib2.HTTPException, e:
             message = 'HTTPException'
             return render_template('message.html', message= message)
 
