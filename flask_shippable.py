@@ -37,7 +37,18 @@ def getUrl():
 
         #procedure to open url and read response from the server which contains source code of the page
         req = urllib2.Request(url_link)
-        r = urllib2.urlopen(req)
+        try:
+            r = urllib2.urlopen(req)
+        except urllib2.URLError as e:
+            message = 'URLError = ' + str(e.reason)
+            return render_template('message.html', message= message)
+        except urllib2.HTTPError, e:
+            message = 'HTTPError = ' + str(e.code)
+            return render_template('message.html', message= message)
+        except urllib2.HTTPError, e:
+            message = 'HTTPException'
+            return render_template('message.html', message= message)
+
 
         htmlstr = r.read()
 
