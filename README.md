@@ -30,16 +30,15 @@ Homepage have some headings and a textbox with a submit button. It's a form and 
 As soon as the submit is pressed, function getUrl in python file (flask_shipppable.py) is called up. It is the function that carries out all the processing. so, we got the values posted by user through the form. 
 
 variables - we initialised 5  variables that hold the count of issues as asked:
-total_active_count = '0'    #count of all active issues
-total_active_7_count = '0'  #count of all active issues which are at max 7 days old - not asked but required for our cals
-total_active_7_more_count = '0'   #count of all active issues which are old than 7 days
-total_active_24_count = '0'       #count of all active issues which at max 24 hrs old
-total_active_24_7_count = '0'     #count of all active issues which are older than 24 hrs but less than 7 days
+total_active_count = '0'    #count of all open issues
+total_active_7_more_count = '0'   #count of all open issues which are old than 7 days
+total_active_24_count = '0'       #count of all open issues which at max 24 hrs old
+total_active_24_7_count = '0'     #count of all open issues which are older than 24 hrs but less than 7 days
 
-current timestamp - Now, we need to have date and time. comparng the current date/time and time of submission of issue, we can fin dtghe age of the issues. So, we initiially calculate the current date and time.
+current timestamp - Now, we need to have date and time. comparng the current date/time and time of submission of issue, we can find the ageing of the issues. So, we initiially calculate the current date and time.
 
 url - since, we have the repository name submitted by user. We need to frame a complete url that is valid and where the requied data can be found. so, after bit of workaround, I found that active issues data is available over page :
-https://github.com/repo_full_name/pulse#new-issues (repo_full_name is the name of valid repo like for our reppository it is: amberagarwal1/flask_shipppable)
+https://github.com/repo_full_name/issues (repo_full_name is the name of valid repo like for our reppository it is: amberagarwal1/flask_shipppable)
 
 so, we have the page that need to be parsed. All the data lies wityhin this page but need to extracted carefully.
 I searched for the pattern for each required count into the page and formulated regular expression.
